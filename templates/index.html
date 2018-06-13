@@ -1,0 +1,27 @@
+<html>
+<head>
+    <script type=text/javascript src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <div class=page>
+    <div class=animeform>
+        <form method="post">
+            <input list=animesearch name="animesearch" id="animeinput" class=datadd>
+            <datalist id=animesearch class=datadd>
+                {% for item in animelist: %}
+                <option>{{ item }}</option>
+                {% endfor %}
+            </datalist>
+            <input type="button" value="Add" class=btn onclick="add_anime()">
+            <input type="button" value="Go !!" class=btn onclick="submit_selection()">
+            <br>
+            <div id="selectedAnimeListContainer" class=selectedAnimeListContainer></div>
+        </form>
+    </div>
+    <div>Recommendation : </div>
+    <div id="recomAnimeListContainer" class=recomAnimeListContainer></div>
+    </div>
+    
+</body>
+</html>
