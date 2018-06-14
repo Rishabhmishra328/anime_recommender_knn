@@ -5,22 +5,22 @@
 </head>
 <body>
     <div class=page>
-    <div class=animeform>
-        <form method="post">
-            <input list=animesearch name="animesearch" id="animeinput" class=datadd>
-            <datalist id=animesearch class=datadd>
-                {% for item in animelist: %}
-                <option>{{ item }}</option>
-                {% endfor %}
-            </datalist>
-            <input type="button" value="Add" class=btn onclick="add_anime()">
-            <input type="button" value="Go !!" class=btn onclick="submit_selection()">
-            <br>
-            <div id="selectedAnimeListContainer" class=selectedAnimeListContainer></div>
-        </form>
-    </div>
-    <div>Recommendation : </div>
-    <div id="recomAnimeListContainer" class=recomAnimeListContainer></div>
+        <div class=animeform>
+            <form method="post">
+                <input list=animesearch name="animesearch" id="animeinput" class=datadd>
+                <datalist id=animesearch class=datadd>
+                    {% for item in animelist: %}
+                    <option>{{ item }}</option>
+                    {% endfor %}
+                </datalist>
+                <input type="button" value="Add" class=btn onclick="add_anime()">
+                <input type="button" value="Go !!" class=btn onclick="submit_selection()">
+                <br><br><span class=spanfield>Number of recommendations:</span><input type="number" class=numrecom id=numrecom>
+                <div id="selectedAnimeListContainer" class=selectedAnimeListContainer></div>
+            </form>
+        </div>
+        <div id="recomAnimeListContainer" class=recomAnimeListContainer>
+        </div>
     </div>
     
 </body>

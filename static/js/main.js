@@ -68,21 +68,25 @@ function submit_selection() {
 
             for(var i = 0; i < recom.length; i ++){
 
-               var containerDIV = document.createElement('div');
-               containerDIV.setAttribute('class', 'selectedAnimeContainer');
+             var containerDIV = document.createElement('div');
+             containerDIV.setAttribute('class', 'selectedAnimeContainer');
 
-               var img_view = document.createElement('img');
-               img_view.setAttribute('class', 'selectedAnimeImage');
+             var img_view = document.createElement('img');
+             img_view.setAttribute('class', 'selectedAnimeImage');
 
-               var name_view = document.createElement('div');
-               name_view.setAttribute('class', 'selectedAnimeName');
+             var name_view = document.createElement('div');
+             name_view.setAttribute('class', 'selectedAnimeName');
 
-            if(i % 4 == 3){
+             var score_view = document.createElement('div');
+             score_view.setAttribute('class', 'selectedAnimeName');
+
+             if(i % 4 == 3){
                 name_view.innerText = recom[i-2]; 
+                score_view.innerText = 'Score:' + recom[i-1];
                 img_view.setAttribute('src', recom[i]);
                 containerDIV.appendChild(name_view);
                 containerDIV.appendChild(img_view);
-                console.log(containerDIV);
+                containerDIV.appendChild(score_view);
                 selectAnimeDIV.appendChild(containerDIV);
             }
         }
@@ -102,9 +106,10 @@ function submit_selection() {
             animeStrength.push(selectedAnime[i].children[2].value);
         }
     }
-    console.log(animeList)
-    console.log(animeStrength)
+
+    var numrecom = document.getElementById('numrecom').value;
+
     req.open('POST', '/', true);
     req.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
-    req.send("animename=" + document.getElementById('animeinput').value + "&" + "from=" + "go" + "&" + "list=" + animeList + "&" + "strength=" + animeStrength);
+    req.send("animename=" + document.getElementById('animeinput').value + "&" + "from=" + "go" + "&" + "list=" + animeList + "&" + "strength=" + animeStrength + "&" + "num=" + numrecom);
 }

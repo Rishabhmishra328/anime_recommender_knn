@@ -18,6 +18,7 @@ def index():
 
         selectedList = request.form["list"].split(",")
         selectedListStrength = request.form["strength"].split(",")
+        num = request.form['num']
         ids = []
         strength = []
         for item in selectedList:
@@ -27,7 +28,7 @@ def index():
             strength.append(float(item) / 100)
 
         print strength, ids
-        recom = ds.get_recom(ids = ids, strength = strength)
+        recom = ds.get_recom(suggestions = num, ids = ids, strength = strength)
         print recom
         return jsonify({'recom': recom})
     animeList = ds.get_data()[0][:, 1]

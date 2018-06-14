@@ -21,9 +21,12 @@ def get_recom(suggestions = 10, ids = [20], strength = [1.0]):
   val = [0.0] * len(get_value(ids[0])) 
   for index in range(len(ids)):
     val = val + (get_value(ids[index]) * strength[index])
-    print val
+  
   val = val / len(ids)
   
+  print suggestions
+  suggestions = int(suggestions)
+
   recom = [[0, 100]] * suggestions
   for index in range(len(data)):
     recom = sorted(recom, key = lambda recom: recom[1])
