@@ -16,4 +16,4 @@ To start the application.
 Open the browser, with address as [localhost:5000](localhost:5000)
 
 # Preview
-[![Select anime and mix them as you like !!!](https://www.youtube.com/watch?v=179WuEiv84k/2.jpg)](https://www.youtube.com/watch?v=179WuEiv84k)
+[![Select anime and mix them as you like !!!](https://www.youtube.com/watch?v=179WuEiv84k/0.jpg)](https://www.youtube.com/watch?v=179WuEiv84k)
